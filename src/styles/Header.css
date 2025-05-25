@@ -1,0 +1,33 @@
+/* src/styles/Header.css */
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  background-color: var(--secondary-bg-color);
+  border-bottom: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  margin-bottom: 20px; /* Add some space below the header */
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: var(--accent-color-blue);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.settings-icon {
+  font-size: 1.5rem;
+  color: var(--text-color-secondary);
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease; /* Added transform for potential animation */
+}
+
+.settings-icon:hover {
+  color: var(--accent-color-green);
+  transform: rotate(45deg); /* Optional: slight rotation on hover */
+}

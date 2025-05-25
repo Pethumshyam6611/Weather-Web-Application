@@ -1,0 +1,84 @@
+/* src/styles/DailyForecast.css */
+
+.daily-forecast-card {
+  background-color: var(--secondary-bg-color);
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  margin-bottom: 20px; /* Space below the card */
+}
+
+.daily-forecast-card h2 {
+  text-align: center;
+  color: var(--accent-color-purple); /* Using purple accent as specified */
+  margin-bottom: 20px;
+}
+
+/* Component uses daily-items-container, this matches */
+.daily-items-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Responsive columns */
+  gap: 15px;
+}
+
+.daily-item {
+  padding: 15px;
+  background-color: var(--primary-bg-color);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.daily-item:hover {
+  transform: scale(1.03); /* Slight scale up */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+
+/* Component uses daily-day, this matches */
+.daily-item .daily-day {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--text-color-primary);
+  margin-bottom: 10px;
+}
+
+/* Component uses weather-icon-placeholder, styling it within .daily-item context */
+/* Using .daily-icon-placeholder as requested for specificity if desired, but targeting existing class */
+.daily-item .weather-icon-placeholder {
+  font-size: 2.5rem;
+  color: var(--accent-color-blue); /* Example accent */
+  margin-bottom: 10px;
+  display: block; /* Ensure it takes up space and margin works correctly */
+}
+
+/* This class .daily-temps would need to be added in DailyForecast.js JSX,
+   wrapping the high and low temperature paragraphs.
+*/
+.daily-item .daily-temps {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--monospace-font);
+  margin-bottom: 8px;
+}
+
+/* Component uses daily-high-temp, this matches */
+.daily-item .daily-high-temp {
+  font-size: 1rem;
+  color: var(--text-color-primary);
+}
+
+/* Component uses daily-low-temp, this matches */
+.daily-item .daily-low-temp {
+  font-size: 1rem;
+  color: var(--text-color-secondary);
+}
+
+/* Component uses daily-condition, this matches */
+.daily-item .daily-condition {
+  font-size: 0.9rem;
+  color: var(--text-color-secondary);
+  text-transform: capitalize;
+}

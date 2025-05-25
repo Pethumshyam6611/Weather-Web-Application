@@ -1,0 +1,93 @@
+/* src/styles/CurrentWeatherCard.css */
+
+.current-weather-card {
+  background-color: var(--secondary-bg-color);
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  text-align: center;
+  margin-bottom: 20px; /* Space below the card */
+}
+
+.main-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Adapting existing .weather-icon or using a specific placeholder class */
+.current-weather-card .weather-icon { /* Targeting .weather-icon inside the card for specificity */
+  font-size: 3rem; /* Make icon prominent */
+  color: var(--accent-color-green); /* Placeholder for --accent-color-yellow */
+  margin-bottom: 10px;
+}
+
+.temperature-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.temperature {
+  font-size: 4rem; /* Large temperature display */
+  font-weight: bold;
+  color: var(--text-color-primary);
+  line-height: 1;
+  font-family: var(--monospace-font); /* For a "data" feel */
+}
+
+.condition {
+  font-size: 1.5rem;
+  color: var(--text-color-secondary);
+  text-transform: capitalize;
+  margin-top: 5px; /* Space between temp and condition */
+  margin-bottom: 15px;
+}
+
+.feels-like {
+  font-size: 1.1rem;
+  color: var(--text-color-secondary);
+  margin-bottom: 20px;
+}
+
+/* Renaming .additional-details to .details-grid for semantic CSS */
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive columns */
+  gap: 15px;
+  text-align: left; /* Override center align for grid items */
+  margin-top: 20px;
+}
+
+.detail-item {
+  background-color: var(--primary-bg-color); /* Slightly different background for detail items */
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.detail-item strong { /* Styling for labels within each detail item */
+  display: block;
+  color: var(--accent-color-blue);
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: normal; /* Assuming the text itself will be the value, not the strong tag */
+}
+
+/* If the paragraph text is the value, style it directly or add a class */
+.detail-item p {
+  margin: 0;
+  font-family: var(--monospace-font);
+  color: var(--text-color-primary);
+}
+
+/* Example of how to structure HTML for .detail-item:
+<div class="detail-item">
+  <strong>Humidity</strong>
+  <p>60%</p>
+</div>
+*/
