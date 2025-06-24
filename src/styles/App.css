@@ -1,0 +1,102 @@
+/* src/styles/App.css */
+
+/* --- Theme Variables --- */
+:root {
+  --primary-bg-color: #0a0f1e;
+  --secondary-bg-color: #1c1c2e;
+  --text-color-primary: #e0e0e0;
+  --text-color-secondary: #a0a0a0;
+  --accent-color-blue: #00aaff;
+  --accent-color-green: #00ffaa;
+  --accent-color-purple: #aa00ff;
+  --border-color: #333344;
+  --futuristic-font: 'Roboto Condensed', 'Orbitron', 'Rajdhani', sans-serif;
+  --monospace-font: 'Roboto Mono', 'Source Code Pro', monospace;
+}
+
+/* --- Global Styles --- */
+body {
+  margin: 0;
+  font-family: var(--futuristic-font);
+  background-color: var(--primary-bg-color);
+  color: var(--text-color-primary);
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 0; /* Ensure no default padding on body */
+}
+
+#root {
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--accent-color-blue);
+  margin-top: 0;
+  margin-bottom: 0.5em; /* Add some space below headings */
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 1.8em;
+  margin-bottom: 0.75em;
+}
+
+a {
+  color: var(--accent-color-green);
+  text-decoration: none;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--accent-color-blue);
+}
+
+/* --- .App Specific Styles --- */
+.App {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between main sections like Header, Search, Weather Details */
+}
+
+/* --- Basic Card Styling --- */
+/* This can be a generic class or applied to specific component classes.
+   For now, components will have their own specific classes, but this defines a base.
+*/
+.card {
+  background-color: var(--secondary-bg-color);
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Utility classes (optional, but can be useful) */
+.text-monospace {
+  font-family: var(--monospace-font);
+}
+
+.text-secondary {
+  color: var(--text-color-secondary);
+}
+
+.text-accent-blue {
+  color: var(--accent-color-blue);
+}
+
+.text-accent-green {
+  color: var(--accent-color-green);
+}
+
+.text-accent-purple {
+  color: var(--accent-color-purple);
+}

@@ -1,0 +1,95 @@
+/* src/styles/HourlyForecast.css */
+
+.hourly-forecast-card {
+  background-color: var(--secondary-bg-color);
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  margin-bottom: 20px; /* Space below the card */
+}
+
+.hourly-forecast-card h2 {
+  text-align: center;
+  color: var(--accent-color-green);
+  margin-bottom: 20px;
+}
+
+.hourly-items-container {
+  display: flex;
+  overflow-x: auto;
+  padding-bottom: 15px; /* Space for scrollbar */
+  gap: 15px; /* Space between hourly items */
+}
+
+/* WebKit Scrollbar Styling */
+.hourly-items-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.hourly-items-container::-webkit-scrollbar-track {
+  background: var(--primary-bg-color);
+  border-radius: 4px;
+}
+
+.hourly-items-container::-webkit-scrollbar-thumb {
+  background-color: var(--accent-color-blue);
+  border-radius: 4px;
+}
+
+.hourly-items-container::-webkit-scrollbar-thumb:hover {
+  background-color: var(--accent-color-green);
+}
+
+.hourly-item {
+  flex: 0 0 auto; /* Prevent shrinking, size based on content or width */
+  width: 100px;   /* Fixed width for each item */
+  padding: 15px 10px;
+  background-color: var(--primary-bg-color);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hourly-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+
+.hourly-item .hourly-time {
+  font-size: 0.9rem;
+  color: var(--text-color-secondary);
+  margin-bottom: 8px;
+}
+
+/* Styling the placeholder div used in the component for the icon */
+.hourly-item .weather-icon-placeholder {
+  font-size: 1.8rem;
+  color: var(--accent-color-purple); /* Using purple accent as example */
+  margin-bottom: 8px;
+  /* Ensure it's a block or inline-block if it contains only text and needs margin */
+  display: block; 
+}
+
+/* Component uses hourly-temperature, adapting to that */
+.hourly-item .hourly-temperature { 
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--text-color-primary);
+  font-family: var(--monospace-font);
+  margin-bottom: 5px;
+}
+
+.hourly-item .hourly-condition {
+  font-size: 0.8rem;
+  color: var(--text-color-secondary);
+  text-transform: capitalize;
+  margin-bottom: 5px; /* Added small margin for spacing */
+}
+
+.hourly-item .hourly-precipitation {
+  font-size: 0.75rem;
+  color: var(--accent-color-blue);
+  margin-top: 5px;
+}
